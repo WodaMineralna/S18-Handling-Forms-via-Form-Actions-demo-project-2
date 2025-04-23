@@ -1,6 +1,8 @@
-import { useActionState } from "react";
+import { useActionState, use } from "react";
 
 import { isEmpty, isNotLongEnough, isTooLong } from "../util/validation";
+
+import { OpinionsContext } from "../store/opinions-context";
 
 const OPINION_MAXLENGHT = 300;
 
@@ -12,7 +14,9 @@ const ERROR_MESSAGES = {
 };
 
 export function NewOpinion() {
-  function newOpinionAction(prevFormState, formState) {
+  const { addOpinion } = use(OpinionsContext)
+
+  async function newOpinionAction(prevFormState, formState) {
     const userName = formState.get("userName");
     const title = formState.get("title");
     const body = formState.get("body");
@@ -39,6 +43,7 @@ export function NewOpinion() {
     }
 
     // TODO send data to backend
+    await addOpinion({ userName, title, body })
 
     return { errors: null };
   }
