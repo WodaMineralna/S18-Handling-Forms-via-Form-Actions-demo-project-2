@@ -50,6 +50,12 @@ export function NewOpinion() {
 
   const [formState, formAction, pending] = useActionState(newOpinionAction, {
     errors: null,
+    // PLACEHOLDER DATA
+    enteredValues: {
+      userName: "Ben",
+      title: "Yes?",
+      body: "Ho ho ho. No."
+    }
   });
 
   return (
