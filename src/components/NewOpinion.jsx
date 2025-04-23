@@ -43,7 +43,6 @@ export function NewOpinion() {
       };
     }
 
-    // TODO send data to backend
     await addOpinion({ userName, title, body })
 
     return { errors: null };
