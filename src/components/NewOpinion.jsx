@@ -3,6 +3,7 @@ import { useActionState, use } from "react";
 import { isEmpty, isNotLongEnough, isTooLong } from "../util/validation";
 
 import { OpinionsContext } from "../store/opinions-context";
+import SubmitButton from "./SubmitButton";
 
 const OPINION_MAXLENGHT = 300;
 
@@ -54,7 +55,7 @@ export function NewOpinion() {
     enteredValues: {
       userName: "Ben",
       title: "Yes?",
-      body: "Ho ho ho. No."
+      body: `${Date.now()} - Ho ho ho. No.`
     }
   });
 
@@ -99,9 +100,7 @@ export function NewOpinion() {
             ))}
           </ul>
         )}
-        <p className="actions">
-          <button type="submit">Submit</button>
-        </p>
+        <SubmitButton />
       </form>
     </div>
   );
