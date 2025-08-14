@@ -2,7 +2,7 @@
 
 Practice code for Section 18 - Handling Forms via Form Actions, part of the course "React - The Complete Guide (incl. Redux)" by Maximilian Schwarzmüller.
 
-This project covers
+This project covers:
 - React 19 form actions - server handled submissions
 - Where form actions make sense vs client handling
   
